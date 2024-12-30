@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // Ensure the status bar and other system UI elements are visible
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent, // Transparent status bar to allow showing system UI
-      statusBarIconBrightness: Brightness.dark, // Dark icons in status bar (can be changed based on your design)
+      statusBarIconBrightness: Brightness.dark, // Dark icons in status bar
     ));
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   }
@@ -23,40 +23,83 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.blue,
+        child: ListView(
+
+          padding: EdgeInsets.only(top: 50),
+          children: [
+
+           // DrawerHeader(
+             // decoration: BoxDecoration(
+               // color: Colors.blue,
+             // ),
+             // child: const Text(
+              //  'Menu',
+             //   style: TextStyle(color: Colors.white, fontSize: 24),
+            //  ),
+           // ),
+            ListTile(
+              leading: const Icon(Icons.home, color: Colors.white,size: 30,),
+              title: const Text('Home' ,style: TextStyle(color: Colors.white, fontSize: 20),),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.history,  color: Colors.white, size: 30,),
+              title: const Text('History',style: TextStyle(color: Colors.white,fontSize: 20),),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.calendar_month,color: Colors.white , size: 30,),
+              title: const Text('Schedule',style: TextStyle(color: Colors.white,fontSize: 20),),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings,color: Colors.white,size: 30,),
+              title: const Text('Settings',style: TextStyle(color: Colors.white,fontSize: 20),),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+              },
+            ),
+          ],
+        ),
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.blue), // Menu icon color
+        title: TextField(
+          decoration: InputDecoration(
+            hintText: 'Search advisors',
+            prefixIcon: const Icon(Icons.search, color: Colors.blue),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.blue),
+              borderRadius: BorderRadius.circular(20),
+            ),
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications, color: Colors.blue),
+            onPressed: () {},
+          ),
+        ],
+      ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.only(top: 25.0,left: 10, right: 10),
+        padding: const EdgeInsets.only(top: 16.0, left: 10, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top bar with menu, search bar, and notification icon
-            Row(
-              children: [
-                const Icon(Icons.menu, color: Colors.blue, size: 28),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search advisors',
-                      prefixIcon: const Icon(Icons.search, color: Colors.blue),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.blue),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                IconButton(
-                  icon: const Icon(Icons.notifications, color: Colors.blue),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
             // Filters
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
