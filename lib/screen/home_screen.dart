@@ -161,6 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView(
                 children: const [
                   AdvisorCard(
+
                     name: 'Sarah Johnson',
                     title: 'Financial Advisor',
                     status: 'Online',
