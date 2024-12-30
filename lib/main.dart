@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project616/screen/home_screen.dart';
 import 'package:project616/screen/phone.dart';
 import 'package:project616/screen/splash_screen.dart';
 import 'package:project616/screen/otp.dart';
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
 
         // Define the  'phone' route here
         '/phone': (context) => const MyPhone(),
+
+
+        '/home_screen': (context) => const HomeScreen(),
       },
     );
   }

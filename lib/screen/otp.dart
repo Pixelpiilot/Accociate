@@ -79,6 +79,9 @@ class _MyOtpState extends State<MyOtp> {
                 child: ElevatedButton(
                   onPressed: () {
                     // Add OTP verification logic here
+                    Navigator.pushNamed(context, '/home_screen');
+
+
                   },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all(Colors.blue),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -96,7 +95,7 @@ class _MyPhoneState extends State<MyPhone> {
                         },
                         style: const TextStyle(
                           fontSize: 18.7,
-                         // fontWeight: FontWeight.bold,
+                          // fontWeight: FontWeight.bold,
                         ),
                         decoration: const InputDecoration(
                           border: InputBorder.none,
