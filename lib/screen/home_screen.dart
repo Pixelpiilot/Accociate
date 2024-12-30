@@ -23,11 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
       drawer: Drawer(
         backgroundColor: Colors.blue,
         child: ListView(
 
-          padding: EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 50),
           children: [
 
            // DrawerHeader(
@@ -70,7 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+
       appBar: AppBar(
+
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.blue), // Menu icon color
@@ -96,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.only(top: 16.0, left: 10, right: 10),
+        padding: const EdgeInsets.only(top: 18.0, left: 10, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -155,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // Advisors List
             Expanded(
               child: ListView(
-                children: [
+                children: const [
                   AdvisorCard(
                     name: 'Sarah Johnson',
                     title: 'Financial Advisor',
